@@ -129,16 +129,6 @@ function gameReducer(state: GameState, action: GameAction): GameState {
       };
     }
 
-    case "NEW_PROBLEM": {
-      if (!state.settings) return state;
-      const { problem, answers } = generateNewProblem(state.settings);
-      return {
-        ...state,
-        currentProblem: problem,
-        fallingAnswers: answers,
-      };
-    }
-
     case "HIT_ANSWER": {
       const answer = state.fallingAnswers.find((a) => a.id === action.answerId);
       if (!answer) return state;
