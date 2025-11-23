@@ -74,8 +74,20 @@ export default function GameCanvas({
     onPlayerMove(x);
   };
 
-  const handlePointerDown = () => {
-    if (state.status === "playing") {
+  const handlePointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
+    if (state.status !== "playing") return;
+
+    // Only fire immediately on mouse (non-touch)
+    if (e.pointerType === "mouse") {
+      onShoot();
+    }
+  };
+
+  const handlePointerUp = (e: React.PointerEvent<HTMLDivElement>) => {
+    if (state.status !== "playing") return;
+
+    // Fire on release for touch devices
+    if (e.pointerType === "touch" || e.pointerType === "pen") {
       onShoot();
     }
   };
@@ -133,6 +145,7 @@ export default function GameCanvas({
         }}
         onPointerMove={handlePointerMove}
         onPointerDown={handlePointerDown}
+        onPointerUp={handlePointerUp}
       >
         {/* Falling answers */}
         {state.fallingAnswers.map((answer) => (
