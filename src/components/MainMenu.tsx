@@ -40,7 +40,7 @@ export default function MainMenu({ onStartGame }: MainMenuProps) {
 
   return (
     <div className="main-menu">
-      <h1 className="game-title">Math Invaders</h1>
+      <h1 className="game-title">Calculate and Conquer</h1>
       <p className="game-subtitle">Shoot the correct answer!</p>
 
       <button
