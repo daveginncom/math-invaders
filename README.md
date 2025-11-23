@@ -1,4 +1,4 @@
-# Math Invaders 🚀
+# Calculate and Conquer 🚀
 
 A fun, educational space-invaders-style math game for young children to practice their math facts!
 

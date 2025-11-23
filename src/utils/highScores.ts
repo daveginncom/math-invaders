@@ -1,6 +1,6 @@
 import type { GameSettings } from "../types/game";
 
-const HIGH_SCORES_KEY = "math-invaders-high-scores";
+const HIGH_SCORES_KEY = "calculate-and-conquer-high-scores";
 
 export interface HighScore {
   score: number;
